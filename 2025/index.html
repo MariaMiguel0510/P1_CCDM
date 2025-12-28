@@ -9,18 +9,19 @@
 	<link rel="stylesheet" href="CSS/style.css">
 </head>
 
-<body>
+<body class="effect">
+	<script src="scripts/transitions.js" defer></script>
 	<header class="headerNav" aria-label="Menu">
 		<nav>
-			<a class="isActive" href="#">HOME</a>
-			<a href="#">PROGRAM</a>
-			<a href="#">ABOUT</a>
-			<a href="#">REGISTER</a>
-			<a href="#">BEFORE</a>
+			<a class="principal isActive" href="#">HOME</a>
+			<a href="#" class="things">PROGRAM</a>
+			<a href="#" class="things">ABOUT</a>
+			<a href="#" class="things">REGISTER</a>
+			<a href="#" class="things">BEFORE</a>
 		</nav>
 	</header>
 	<main>
-		<div id="app" class="intro intro--maps" aria-label="CCDM intro">
+		<div id="app" class="intro intro--maps" aria-label="CCDM intro" style="display: none;">
 			<div class="scene">
 				<div class="fullTitle" aria-label="Título">
 					<div id="titleLine1" class="line"></div>
@@ -28,34 +29,287 @@
 					<div id="titleLine3" class="line"></div>
 					<div id="titleLine4" class="line"></div>
 				</div>
-
 			</div>
 		</div>
-        <!--
-        <div id="programm">
-            <div class="word">
-                <div class="glyph" bis_skin_checked="1">
-                    <img class="layer-map" alt="" loading="eager" decoding="async" src="Data/.png">
-                    <img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
-                </div>
-                <div class="glyph" bis_skin_checked="1">
-                    <img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
-                    <img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
-                </div><div class="glyph" data-char="C" bis_skin_checked="1">
-                    <img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
-                    <img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
-                </div>
-                <div class="glyph" bis_skin_checked="1">
-                    <img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
-                    <img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
-                </div>
-                <div class="glyph" data-char="C" bis_skin_checked="1">
-                    <img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
-                    <img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
-                </div>
-            </div>
+        <div id="programmTitle">
+			<div class="scene">
+				<div class="fullTitle">
+					<div class="word">
+						<div class="glyph" bis_skin_checked="1">
+							<img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
+							<img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
+						</div>
+						<div class="glyph" bis_skin_checked="1">
+							<img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
+							<img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
+						</div>
+						<div class="glyph" data-char="C" bis_skin_checked="1">
+							<img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
+							<img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
+						</div>
+						<div class="glyph" bis_skin_checked="1">
+							<img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
+							<img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
+						</div>
+						<div class="glyph" data-char="C" bis_skin_checked="1">
+							<img class="layer-map" alt="" loading="eager" decoding="async" src="Data/C_3_F.png">
+							<img class="layer-letter" alt="" loading="eager" decoding="async" src="Data/C_3_C.png">
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
-        -->
+		<div class="dateContentor">
+			<div class="dateBox effect" id="buttom15">
+				<div>1</div>
+				<div>5</div>
+			</div>
+			<div class="dateBox effect" id="buttom16">
+				<div>1</div>
+				<div>6</div>
+			</div>
+			<div class="dateBox effect" id="buttom17">
+				<div>1</div>
+				<div>7</div>
+			</div>
+			<div class="dateBox effect" id="buttom18">
+				<div>1</div>
+				<div>8</div>
+			</div>
+			<div class="dateBox effect" id="buttom19">
+				<div>1</div>
+				<div>9</div>
+			</div>
+		</div>
+		<div class="programmContentor effect" id ="programmDay15">
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 1</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Braulio.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 2</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Braulio.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 3</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Braulio.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 4</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Braulio.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 5</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Braulio.png">
+				</div>
+			</div>
+		</div>
+		<div class="programmContentor effect" id ="programmDay16">
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 1</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Camila.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 2</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Camila.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 3</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Camila.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 4</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Camila.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 5</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Camila.png">
+				</div>
+			</div>
+		</div>
+		<div class="programmContentor effect" id ="programmDay17">
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 1</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Rejane.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 2</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Rejane.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 3</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Rejane.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 4</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Rejane.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 5</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Rejane.png">
+				</div>
+			</div>
+		</div>
+		<div class="programmContentor effect" id ="programmDay18">
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 1</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Susana.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 2</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Susana.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 3</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Susana.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 4</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Susana.png">
+				</div>
+			</div>
+			<div class="oradorContentor">
+				<div class="oradorInformation">
+					<span class="oradorName">Orador 5</span>
+					<span class="oradorDate">07 de abril</span>
+					<span class="oradorText">Esta acção de divulgação pública fora da Faculdade pretende não só mostrar o trabalho de diferentes profissionais cujo trabalho é amplamente reconhecido, como contribuir para a divulgação do cursos, os primeiros nesta área leccionados na Universidade de Coimbra. O programa é constituído por convidados de diversas áreas (Design Gráfico, Design de Interacção, Web Design, Arquitectura, Teoria do Design, Arte, Ilustração, etc.) repartidos por quatro sessões. Propositadamente se junta, na mesma sessão, duas entidades convidadas (que podem ser individuais ou colectivas) de áreas distintas.</span>
+					<span>https://badbadbadbad.com/.</span>
+				</div>
+				<div>
+					<img src="Ilustrações/Susana.png">
+				</div>
+			</div>
+		</div>
+		<div class="dayBox" id="day15"></div>
 	</main>
 	<footer class="footerLogos" aria-label="Logos">
 		<img src="Data/Other/Footer.png">
