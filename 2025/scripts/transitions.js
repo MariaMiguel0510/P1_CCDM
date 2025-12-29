@@ -1,6 +1,7 @@
 
 // const body = document.querySelector('body');
 
+
 // document.querySelectorAll('.things').forEach( cosa => {
 //     cosa.addEventListener('click', () =>{
 //         body.style.paddingTop = '1vh';
@@ -11,32 +12,88 @@
 //     body.style.paddingTop = '12.5vh';
 // })
 
+const temp = 400;
+
+const AbaB = document.querySelectorAll('.AbaB')
+const Aba = document.querySelectorAll('.aba')
 const programmAll = document.querySelectorAll('.programmContentor') 
+
+let abaActual = 2; 
+
+document.getElementById('AbaB1').addEventListener('click', () => {
+    trocaAba(1);
+    abaButtons(1);
+    abaActual = 1;
+})
+
+document.getElementById('AbaB2').addEventListener('click', () => {
+    if(abaActual !== 2){
+        trocaAba(2);
+        abaButtons(2);
+        trocaProgramm(15)
+    }
+    
+    abaActual = 2;
+})
+
+function abaButtons(id){
+    if (abaActual != id){
+        AbaB.forEach(b => {
+            b.classList.remove('isActive')
+        })
+        document.getElementById(`AbaB${id}`).classList.add('isActive')
+    }
+}
+
+
+function trocaAba(id){
+    const choice = document.querySelectorAll(`.aba${id}`)
+
+    choice.forEach(c => {
+        if(c.style.display == 'none'){
+            Aba.forEach(a => {
+                a.style.opacity = 0
+
+                setTimeout(() => {
+                    a.style.display = 'none'
+                }, temp)
+            })
+
+            setTimeout(() => {
+                choice.forEach(abaSelected => {
+                    abaSelected.style.display = 'flex';
+                    abaSelected.style.opacity = '0';
+                })
+
+                setTimeout(() => {
+                    choice.forEach(abaSelected => {
+                        abaSelected.style.opacity = '1';
+                    })
+                }, 10);
+            }, temp)
+        }
+    })
+}
 
 
 
 
 
 document.getElementById('buttom15').addEventListener('click', () => {
-    console.log('carregou no 15')
     trocaProgramm(15);
 })
 
 document.getElementById('buttom16').addEventListener('click', () => {
     trocaProgramm(16);
-    console.log('carregou no 16')
 })
 
 document.getElementById('buttom17').addEventListener('click', () => {
     trocaProgramm(17);
-    console.log('carregou no 17')
 })
 
 document.getElementById('buttom18').addEventListener('click', () => {
-    trocaProgramm(16);
-    console.log('carregou no 18')
+    trocaProgramm(18);
 })
-
 
 
 function trocaProgramm(id){
@@ -48,7 +105,7 @@ function trocaProgramm(id){
 
             setTimeout(() => {
                 programm.style.display = 'none';
-            }, 400);
+            }, temp);
         });
 
         setTimeout(() => {
@@ -59,9 +116,7 @@ function trocaProgramm(id){
                 choice.style.opacity = '1';
             }, 10);
 
-        }, 400);
+        }, temp);
     }
 }
 
-
-console.log(programmAll);
