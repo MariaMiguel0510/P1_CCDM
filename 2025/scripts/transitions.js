@@ -1,4 +1,3 @@
-
 // const body = document.querySelector('body');
 
 
@@ -34,6 +33,18 @@ document.getElementById('AbaB2').addEventListener('click', () => {
     }
     
     abaActual = 2;
+})
+
+document.getElementById('AbaB3').addEventListener('click', () => {
+    trocaAba(3);
+    abaButtons(3);
+    abaActual = 3;
+})
+
+document.getElementById('AbaB4').addEventListener('click', () => {
+    trocaAba(4);
+    abaButtons(4);
+    abaActual = 4;
 })
 
 function abaButtons(id){
@@ -74,10 +85,6 @@ function trocaAba(id){
         }
     })
 }
-
-
-
-
 
 document.getElementById('buttom15').addEventListener('click', () => {
     trocaProgramm(15);

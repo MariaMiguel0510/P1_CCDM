@@ -1,5 +1,4 @@
-
-	@font-face {
+@font-face {
   font-family: 'JetBrains Mono';
   src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold-Italic.woff2') format('woff2'),
     url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold-Italic.woff') format('woff');
@@ -294,9 +293,9 @@ body.is-ready .glyph:hover .layer-letter {
 }
 
 .dateBox{
-	padding: 1.5vh;
 	display: flex;
 	flex-direction: row;
+	width: fit-content;
 }
 
 .dateBox > div{
@@ -349,6 +348,96 @@ body.is-ready .glyph:hover .layer-letter {
 .oradorText{
 	margin-right: 10vw;
 }
+
+#beforeTitle{
+	padding-bottom: 15vh;
+}
+
+.beforeBox{
+	display: grid;
+	grid-template-columns: 40vw auto;
+	column-gap: 7.5vw;
+	padding-bottom: 15vh;
+}
+
+.beforeContentor{
+	display: flex;
+	flex-direction: column;
+}
+
+.beforeContentor > .dateBox{
+	padding-bottom: 2.5vh;
+}
+
+
+.editionContent{
+	display: flex;
+	flex-direction: column;
+}
+
+.editionContent > span:nth-child(1){
+	text-decoration: underline;
+	font-size: 2.5vh;
+}
+
+.editionContent > span{
+	padding-bottom: 2.5vh;
+}
+
+.speakers{
+	display: flex;
+	flex-direction: column;
+}
+
+.speakers > span:nth-child(1){
+	font-size: 2.5vh;
+	font-weight: 500;
+	padding-bottom: 1.5vh;
+}
+
+.speakers > span:not(:nth-child(1)){
+	font-size: 1.75vh;
+}
+
+
+#aboutTitle{
+	padding-bottom: 10vh;
+}
+
+.aboutContentor{
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.textAbout{
+	display: block;
+	font-size: 1.8vh;
+	padding-bottom: 2vh;
+}
+
+.textAboutContentor{
+	padding-bottom: 7.5vh;
+}
+
+.orgBox{
+	display: flex;
+	flex-direction: column;
+}
+
+.aboutTitles{
+	font-size: 4vh;
+	font-weight: 400;
+	padding-bottom: 2.5vh;	
+}
+
+.abBox{
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 10vh;
+}
+
+
 @media (max-width: 520px) {
 	:root {
 		--glyph: clamp(36px, 9vw, 68px);
