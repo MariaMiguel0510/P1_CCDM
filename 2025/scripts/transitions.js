@@ -17,7 +17,7 @@ const AbaB = document.querySelectorAll('.AbaB')
 const Aba = document.querySelectorAll('.aba')
 const programmAll = document.querySelectorAll('.programmContentor') 
 
-let abaActual = 2; 
+let abaActual = 1; 
 
 document.getElementById('AbaB1').addEventListener('click', () => {
     trocaAba(1);
