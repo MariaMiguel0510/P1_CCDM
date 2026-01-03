@@ -132,7 +132,7 @@ main{
 
 footer{
 	grid-area: Footer;
-	padding-bottom: 10vh;
+	padding-bottom: 7vh;
 }
 
 .headerNav nav {
@@ -169,7 +169,7 @@ footer{
 	transition: opacity 650ms ease;
 
 	padding-left: 2.5vw;
-	padding-top: 15vh;
+	padding-top: 7vh;
 }
 
 .footerLogos img {
