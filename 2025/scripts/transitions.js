@@ -12,38 +12,54 @@
 // })
 
 const temp = 400;
+const footTemp = 1500;
+const titleFadeDelay = 300; 
 
 const AbaB = document.querySelectorAll('.AbaB')
 const Aba = document.querySelectorAll('.aba')
 const programmAll = document.querySelectorAll('.programmContentor') 
 
-let abaActual = 1; 
+let abaActual = 1;
+let footerTimeout = null;
 
 document.getElementById('AbaB1').addEventListener('click', () => {
+    clearTimeout(footerTimeout);
     trocaAba(1);
     abaButtons(1);
     abaActual = 1;
+    document.body.classList.remove('not-home');
 })
 
 document.getElementById('AbaB2').addEventListener('click', () => {
+    clearTimeout(footerTimeout);
     if(abaActual !== 2){
         trocaAba(2);
         abaButtons(2);
         trocaProgramm(15)
     }
-    
+    footerTimeout = setTimeout(() => {
+        document.body.classList.add('not-home');
+    }, footTemp);
     abaActual = 2;
 })
 
 document.getElementById('AbaB3').addEventListener('click', () => {
+    clearTimeout(footerTimeout);
     trocaAba(3);
     abaButtons(3);
+    footerTimeout = setTimeout(() => {
+        document.body.classList.add('not-home');
+    }, footTemp);
     abaActual = 3;
 })
 
 document.getElementById('AbaB4').addEventListener('click', () => {
+    clearTimeout(footerTimeout);
     trocaAba(4);
     abaButtons(4);
+    footerTimeout = setTimeout(() => {
+        document.body.classList.add('not-home');
+    }, footTemp);
     abaActual = 4;
 })
 
@@ -74,12 +90,24 @@ function trocaAba(id){
                 choice.forEach(abaSelected => {
                     abaSelected.style.display = 'flex';
                     abaSelected.style.opacity = '0';
+                    
+                    if (abaSelected.id && abaSelected.id.endsWith('Title')) {
+                        abaSelected.classList.remove('show-title');
+                    }
                 })
 
                 setTimeout(() => {
                     choice.forEach(abaSelected => {
                         abaSelected.style.opacity = '1';
                     })
+                    
+                    setTimeout(() => {
+                        choice.forEach(abaSelected => {
+                            if (abaSelected.id && abaSelected.id.endsWith('Title')) {
+                                abaSelected.classList.add('show-title');
+                            }
+                        })
+                    }, titleFadeDelay);
                 }, 10);
             }, temp)
         }

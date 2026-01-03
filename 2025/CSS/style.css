@@ -81,7 +81,7 @@
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
 	--glyph: 11.5vh;
-	--gap: 1vw;
+	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
 }
@@ -106,13 +106,17 @@ body {
 	;
 
 	column-gap: 0vw;
-	padding: 5vh;
-	padding-top: 7.5vh;
-	padding-bottom: 0vh;
-
 	grid-template-columns: 15vw auto;
 }
 
+header,main {
+    padding: 5vh;
+    padding-top: 7.5vh;
+}
+
+header{
+	padding-right: 0vw;
+}
 
 .headerNav {
 	grid-area: Header;
@@ -123,6 +127,7 @@ body {
 main{
 	grid-area: Main;
 	padding-left: 3vw;
+	padding-right: 9vw;
 }
 
 footer{
@@ -140,13 +145,21 @@ footer{
 .headerNav a {
 	text-decoration: none;
 	color: var(--fg);
-	font-size: 1.5vh;
+	font-size: 1.85vh;
 	letter-spacing: 0.08em;
 	font-weight: 600;
 }
 
 .headerNav a.isActive {
 	color: var(--accent);
+}
+
+.AbaB:hover{
+	color: #00E2FD;
+}
+
+.layer-letter{
+	cursor: pointer;
 }
 
 .footerLogos {
@@ -303,7 +316,7 @@ body.is-ready .glyph:hover .layer-letter {
 	font-weight: 700;
 }
 
-.dateBox:hover{
+.dateContentor .dateBox:hover{
 	cursor: pointer;
 	scale: 1.15;
 }
@@ -346,7 +359,7 @@ body.is-ready .glyph:hover .layer-letter {
 }
 
 .oradorText{
-	margin-right: 10vw;
+	margin-right: 2.5vw;
 }
 
 #beforeTitle{
@@ -435,6 +448,31 @@ body.is-ready .glyph:hover .layer-letter {
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 10vh;
+}
+
+
+body.not-home .footerLogos,
+body.not-home div[style*="grid-area: Not"] {
+	background: #00E2FD;
+}
+
+#programmTitle .layer-letter,
+#aboutTitle .layer-letter,
+#beforeTitle .layer-letter {
+	opacity: 0 !important;
+	transition: opacity 800ms ease-in-out;
+}
+
+#programmTitle.show-title .layer-letter,
+#aboutTitle.show-title .layer-letter,
+#beforeTitle.show-title .layer-letter {
+	opacity: 1 !important;
+}
+
+body.is-ready #programmTitle .glyph:hover .layer-letter,
+body.is-ready #aboutTitle .glyph:hover .layer-letter,
+body.is-ready #beforeTitle .glyph:hover .layer-letter {
+	opacity: 0 !important;
 }
 
 

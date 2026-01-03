@@ -6,12 +6,14 @@
 				'C': 4,
 				'D': 3,
 				'E': 5,
+				'F': 1,
 				'G': 2,
 				'I': 3,
 				'L': 3,
 				'M': 4,
 				'N': 2,
 				'O': 2,
+				'P': 1,
 				'R': 2,
 				'S': 4,
 				'T': 2,
@@ -64,6 +66,8 @@
 				const frames = frameCounts[char] ?? 1;
 				let current = Math.floor(Math.random() * frames);
 				let intervalId = null;
+				
+				const randomInterval = 5000 + Math.random() * 20000;
 
 				function applyFrame(idx) {
 					current = idx;
@@ -80,7 +84,7 @@
 
 				function start() {
 					if (intervalId != null) return;
-					intervalId = window.setInterval(tick, 3000);
+					intervalId = window.setInterval(tick, randomInterval);
 				}
 
 				function stop() {
@@ -187,12 +191,12 @@
 	document.body.classList.remove('is-frame2', 'is-rest-visible', 'is-ready');
 	document.body.classList.add('is-frame1');
 
-	raf2(() => {
-		computeInitialTransformsToCenterRow();
+	// raf2(() => {
+	// 	computeInitialTransformsToCenterRow();
 
-		window.setTimeout(() => {
-			document.body.classList.add('is-frame2');
-		}, 520);
+	// 	window.setTimeout(() => {
+	// 		document.body.classList.add('is-frame2');
+	// 	}, 520);
 
 		window.setTimeout(() => {
 			document.body.classList.remove('is-frame1');
@@ -202,14 +206,123 @@
 			document.body.classList.add('is-rest-visible');
 			document.body.classList.add('is-ready');
 		}, 1350 + 900);
-	});
+	// });
 
-	window.addEventListener('resize', () => {
-		if (!document.body.classList.contains('is-frame1')) return;
-		raf2(computeInitialTransformsToCenterRow);
-	});
+	document.body.classList.add('is-frame2');
+	document.body.classList.add('is-rest-visible');
+	document.body.classList.add('is-ready');
+
+	// window.addEventListener('resize', () => {
+	// 	if (!document.body.classList.contains('is-frame1')) return;
+	// 	raf2(computeInitialTransformsToCenterRow);
+	// });
 
 	window.addEventListener('beforeunload', () => {
 		for (const fn of cleanups) fn();
+	});
+
+	function getCharFromImageSrc(imgSrc) {
+		const match = imgSrc.match(/\/([A-Z+_])_\d+_[CF]\.png$/);
+		return match ? match[1] : null;
+	}
+
+	const activeAnimations = {};
+
+	function startSecondaryTitleAnimation(titleElement) {
+		const titleId = titleElement.id;
+		
+		if (activeAnimations[titleId]) {
+			activeAnimations[titleId].forEach(cleanup => cleanup());
+			activeAnimations[titleId] = [];
+		}
+
+		const glyphs = titleElement.querySelectorAll('.glyph');
+		const cleanupFunctions = [];
+
+		glyphs.forEach((glyph) => {
+			const mapImg = glyph.querySelector('.layer-map');
+			const letterImg = glyph.querySelector('.layer-letter');
+			if (!mapImg || !letterImg) return;
+
+			const char = getCharFromImageSrc(mapImg.src);
+			if (!char || !frameCounts[char]) return;
+
+			glyph.dataset.char = char;
+			
+			glyph.classList.add('glyph--rest');
+
+			const frames = frameCounts[char];
+			let current = Math.floor(Math.random() * frames);
+			let intervalId = null;
+			const randomInterval = 2000 + Math.random() * 6000;
+
+			function applyFrame(idx) {
+				current = idx;
+				mapImg.src = assetPath(char, idx, 'F');
+				letterImg.src = assetPath(char, idx, 'C');
+			}
+
+			function tick() {
+				if (frames <= 1) return;
+				let next = Math.floor(Math.random() * frames);
+				if (frames > 1 && next === current) next = (next + 1) % frames;
+				applyFrame(next);
+			}
+
+			function start() {
+				if (intervalId != null) return;
+				intervalId = window.setInterval(tick, randomInterval);
+			}
+
+			function stop() {
+				if (intervalId == null) return;
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+
+			applyFrame(current);
+
+			const startTimeout = window.setTimeout(() => {
+				start();
+			}, 3000);
+
+			glyph.addEventListener('mouseenter', stop);
+			glyph.addEventListener('mouseleave', start);
+
+			const cleanup = () => {
+				window.clearTimeout(startTimeout);
+				stop();
+				glyph.removeEventListener('mouseenter', stop);
+				glyph.removeEventListener('mouseleave', start);
+			};
+
+			cleanupFunctions.push(cleanup);
+		});
+
+		activeAnimations[titleId] = cleanupFunctions;
+		
+		document.body.classList.add('is-rest-visible');
+	}
+
+	const secondaryTitleIds = ['programmTitle', 'aboutTitle', 'beforeTitle'];
+	
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+				const target = mutation.target;
+				const display = window.getComputedStyle(target).display;
+				
+				if (display !== 'none' && secondaryTitleIds.includes(target.id)) {
+					startSecondaryTitleAnimation(target);
+				}
+			}
+		});
+	});
+
+	secondaryTitleIds.forEach(titleId => {
+		const element = document.getElementById(titleId);
+		if (element) {
+			observer.observe(element, { attributes: true, attributeFilter: ['style'] });
+		}
 	});
 })();
