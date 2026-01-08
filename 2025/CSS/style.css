@@ -80,7 +80,7 @@
 	--bg: rgb(255, 255, 255);
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
-	--glyph: 13vh;
+	--glyph: 13.25vh;
 	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
@@ -505,5 +505,6 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-top: 8vh;
 		height: 3vh;
 		transform: translate(0vw, 32.5vh);
+		overflow: hidden;
 	}
 }
