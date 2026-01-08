@@ -475,9 +475,24 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	opacity: 0 !important;
 }
 
+.mobile{
+	display: none;
+}
 
 @media (max-width: 520px) {
 	:root {
 		--glyph: clamp(36px, 9vw, 68px);
+	}
+
+	header, main, footer{
+		display: none;
+	}
+
+	.mobile{
+		display: flex;
+		flex-direction: column;
+
+		width: 100vw;
+		height: 100vh;
 	}
 }
