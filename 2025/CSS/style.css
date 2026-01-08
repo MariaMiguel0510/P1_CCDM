@@ -484,7 +484,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		--glyph: clamp(36px, 9vw, 68px);
 	}
 
-	header, main, footer{
+	header, main, footer, .footerLogos{
 		display: none;
 	}
 
@@ -497,6 +497,11 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 		width: 100vw;
 		height: 100vh;
+	}
 
+	.mobile img{
+		padding-top: 8vh;
+		height: 3vh;
+		transform: translate(0vw, 32.5vh);
 	}
 }
