@@ -486,6 +486,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		--glyph: clamp(36px, 9vw, 68px);
 	}
 
+	body{
+		overflow: hidden;
+	}
+
 	header, main, footer, .footerLogos{
 		display: none;
 	}
