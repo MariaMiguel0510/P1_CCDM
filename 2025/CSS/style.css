@@ -529,7 +529,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		justify-content: center;
 		align-items: center;
 
-		font-size: 2.75vw;
+		font-size: 3.25vw;
 	}
 
 	.headerNav {
@@ -566,14 +566,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.oradorContentor {
 		width: auto;
-		height: 60vh;
 		display: grid;
-		grid-template-rows: 60% auto;
+		grid-template-rows: 75vw auto;
 		grid-template-columns: 1fr;
 
-		row-gap: 2vh;
+		row-gap: 7.5vw;
 
-		padding-bottom: 7.5vh;
+		padding-bottom: 6vw;
 	}
 
 	.oradorContentor>div:nth-child(2){
