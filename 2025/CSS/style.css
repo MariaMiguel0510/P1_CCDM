@@ -570,7 +570,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		grid-template-rows: 75vw auto;
 		grid-template-columns: 1fr;
 
-		row-gap: 7.5vw;
+		row-gap: 25vw;
 
 		padding-bottom: 6vw;
 	}
