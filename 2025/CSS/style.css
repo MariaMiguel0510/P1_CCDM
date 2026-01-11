@@ -534,10 +534,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.headerNav {
 		width: 97vw;
-		height: 25vh;
+		height: 20vh;
 
 		align-content: end;
-		padding-left: 3vw;
+		padding-left: 5vw;
 	}
 
 	.headerNav nav{
