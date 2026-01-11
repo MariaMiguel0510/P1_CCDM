@@ -534,7 +534,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.headerNav {
 		width: 97vw;
-        height: 22.5vh;
+        height: 20vh;
         
 		align-content: end;
         padding-left: 7vw;
@@ -544,7 +544,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		flex-direction: column;
 		justify-content: center;
 		text-align: left;
-		gap: 2vw;
+		gap: 1.5vw;
 	}
 
 	.dateContentor {
