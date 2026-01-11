@@ -511,7 +511,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-left: 3vw;
 	} */
 
-	.footerLogos{
+	.footerLogos, #app{
 		display: none;
 	}
 
@@ -534,17 +534,18 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.headerNav {
 		width: 97vw;
-		height: 8vh;
+		height: 25vh;
 
-		align-content: center;
+		align-content: end;
+		padding-left: 3vw;
 	}
 
 	.headerNav nav{
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
-		gap: 5vw;
+		text-align: left;
+		gap: 2vw;
 	}
-
 
 	.dateContentor {
 		width: 80vw;
@@ -599,7 +600,8 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding: 10vw;
 	}
 
-	/* .mobile{
+	/* 
+	.mobile{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -614,5 +616,6 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		height: 3vh;
 		transform: translate(0vw, 32.5vh);
 		overflow: hidden;
-	} */
+	} 
+	*/
 }
