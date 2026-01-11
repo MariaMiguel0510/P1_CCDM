@@ -80,7 +80,7 @@
 	--bg: rgb(255, 255, 255);
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
-	--glyph: 13.25vh;
+	--glyph: 15.5vh;
 	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
@@ -107,14 +107,15 @@ body {
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 15vw auto;
+	grid-template-columns: 10vw auto;
 
 }
 
 header,main {
     padding: 5vh;
-    padding-top: 10vh;
+    padding-top: 8vh;
 	/* padding-left: 1.5vw; */
+	padding-bottom: 0vh;
 }
 
 header, main, footer img{
@@ -179,7 +180,7 @@ footer{
 	transition: opacity 650ms ease;
 
 	padding-left: 2.5vw;
-	padding-top: 7vh;
+	padding-top: 8vh;
 }
 
 .footerLogos img {
@@ -205,7 +206,7 @@ footer{
 
 	display: flex;
 	flex-direction: column;
-	gap: 2vh;
+	gap: 1vh;
 }
 
 body.is-ready .headerNav {
@@ -227,7 +228,7 @@ body.is-ready .footerLogos {
 .word {
 	display: flex;
 	align-items: center;
-	gap: var(--gap);
+	/* gap: var(--gap); */
 }
 
 .spacer {
@@ -237,7 +238,7 @@ body.is-ready .footerLogos {
 
 .glyph {
 	position: relative;
-	width: var(--glyph);
+	width: calc(var(--glyph) * 0.95);
 	height: calc(var(--glyph) * 1.15);
 	flex: 0 0 auto;
 	opacity: 1;
