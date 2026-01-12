@@ -80,7 +80,7 @@
 	--bg: rgb(255, 255, 255);
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
-	--glyph: 8.575vw;
+	--glyph: 8.0375vw;
 	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
@@ -107,7 +107,7 @@ body {
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 10vw 84vw;
+	grid-template-columns: 12.5vw 79vw;
 
 }
 
