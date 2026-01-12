@@ -80,7 +80,7 @@
 	--bg: rgb(255, 255, 255);
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
-	--glyph: 15.5vh;
+	--glyph: 8.575vw;
 	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
@@ -107,7 +107,7 @@ body {
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 10vw auto;
+	grid-template-columns: 10vw 84vw;
 
 }
 
@@ -116,10 +116,11 @@ header,main {
     padding-top: 8vh;
 	/* padding-left: 1.5vw; */
 	padding-bottom: 0vh;
+	padding-right: 0vw;
 }
 
 header, main, footer img{
-	transform: translate(1.5vw, 0vh);
+	/* transform: translate(1.5vw, 0vh); */
 } 
 
 
@@ -136,7 +137,6 @@ header{
 main{
 	grid-area: Main;
 	padding-left: 3vw;
-	padding-right: 9vw;
 }
 
 footer{
@@ -361,7 +361,7 @@ body.is-ready .glyph:hover .layer-letter {
 }
 
 .oradorName{
-	font-size: 3.5vh;
+	font-size: 2.5vw;
 	font-weight: 600;
 }
 
