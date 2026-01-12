@@ -490,6 +490,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	display: none;
 }
 
+
+
+@media (aspect-ratio: 16/9) { 
+	
+}
+
+
 @media (max-width: 520px) {
 	:root {
 		--glyph: 12.5vw;
