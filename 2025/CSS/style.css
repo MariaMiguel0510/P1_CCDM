@@ -210,6 +210,10 @@ footer{
 	gap: 1vh;
 }
 
+#appMobile{
+	display: none;
+}
+
 body.is-ready .headerNav {
 	opacity: 1;
 }
@@ -513,6 +517,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	:root {
 		--glyph: 12.5vw;
 		--padd: 4vw;
+		--escala: 3.25;
 	}
 
 	body{
@@ -524,8 +529,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
         'Main'
 		'Footer';
 		column-gap: 0vw;
-		grid-template-columns: auto;
-		grid-template-rows: 10vh auto auto;
+		grid-template-columns: 1fr;
+		grid-template-rows: 25vh 1fr 15vh;
+
+		min-height: 100vh;
 		
 	}
 
@@ -533,8 +540,40 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-left: 3vw;
 	} */
 
-	.footerLogos, #app{
+	#app{
 		display: none;
+	}
+
+
+	.footerLogos{
+		padding-left: 0vh;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+		
+		justify-content: center;
+        align-items: center;
+	}
+
+	.footerLogos img {
+		width: 75vw;
+		height: auto;
+	}
+
+
+	#appMobile{
+		width: 100%;
+		
+		display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+		gap: 3.5vh;
+	}
+
+	#appMobile div.glyph{
+		width: calc(var(--glyph) * 0.95 * var(--escala));
+    	height: calc(var(--glyph) * 1.15 * var(--escala));
 	}
 
 	header, main {
@@ -544,7 +583,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	main{
-		width: 98vw;
+		width: 100%;
 
 		display: flex;
 		flex-direction: column;
@@ -554,18 +593,23 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		font-size: 3.25vw;
 	}
 
+	.spanConversas{
+		font-size: 3.25vw;
+        padding-left: 1vw;
+		font-weight: 500;
+	}
+
 	.headerNav {
-		width: 97vw;
         height: 20vh;
         
 		align-content: end;
-        padding-left: 7vw;
+		padding-left: 11.75vw;
 	}
 
 	.headerNav nav{
 		flex-direction: column;
 		justify-content: center;
-		text-align: left;
+		align-items: start;
 		gap: 1.5vw;
 	}
 

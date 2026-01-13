@@ -24,11 +24,15 @@
 			};
 
 	const app = document.getElementById('app');
+	const appMobile = document.getElementById('appMobile');
 
-	const titleLine1 = document.getElementById('titleLine1');
-	const titleLine2 = document.getElementById('titleLine2');
-	const titleLine3 = document.getElementById('titleLine3');
-	const titleLine4 = document.getElementById('titleLine4');
+	const titleLine1 = app.querySelector('#titleLine1');
+	const titleLine2 = app.querySelector('#titleLine2');
+	const titleLine3 = app.querySelector('#titleLine3');
+	const titleLine4 = app.querySelector('#titleLine4');
+
+	const mobileLine1 = appMobile.querySelector('#titleLine1');
+	const mobileLine2 = appMobile.querySelector('#titleLine2');
 
 	const cleanups = [];
 
@@ -141,11 +145,16 @@
 		return firstGlyph;
 	}
 
+	// Build desktop version
 	const initials = [];
 	initials.push(buildLine(titleLine1, 'CICLO DE', 'C'));
 	initials.push(buildLine(titleLine2, 'CONVERSAS', 'C'));
 	initials.push(buildLine(titleLine3, 'DESIGN +', 'D'));
 	initials.push(buildLine(titleLine4, 'MULTIMEDIA', 'M'));
+
+	// Build mobile version with CCDM
+	buildLine(mobileLine1, 'CC', null);
+	buildLine(mobileLine2, 'DM', null);
 
 	const initialGlyphs = initials.filter(Boolean);
 
