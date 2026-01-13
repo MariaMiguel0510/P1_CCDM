@@ -493,7 +493,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 
 @media (aspect-ratio: 16/9) { 
+	:root {
+		--glyph: 7.475vw;
+	}
 	
+	body{
+		grid-template-columns: 15.575vw 73.6vw;
+	}
 }
 
 
