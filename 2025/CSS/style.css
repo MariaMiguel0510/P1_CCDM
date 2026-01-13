@@ -107,7 +107,7 @@ body {
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 12.5vw 79vw;
+	grid-template-columns: 12.5vw auto;
 
 }
 
@@ -135,6 +135,7 @@ header{
 }
 
 main{
+	width: 79vw;
 	grid-area: Main;
 	padding-left: 3vw;
 }
@@ -340,6 +341,7 @@ body.is-ready .glyph:hover .layer-letter {
 	padding-top: 12.5vh;
 
 	gap: 10vh;
+	padding-bottom: 10vh;
 }
 
 .oradorContentor{
@@ -498,7 +500,11 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 	
 	body{
-		grid-template-columns: 17.95vw 68.75vw;
+		grid-template-columns: 17.95vw auto;
+	}
+
+	main{
+		width: 68.75vw;
 	}
 }
 
