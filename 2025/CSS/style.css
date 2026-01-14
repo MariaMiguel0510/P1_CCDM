@@ -716,6 +716,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	:root {
 		--glyph: 12.5vw;
 		--escala: 1.9;
+		--escala2: 0.75;
 	}
 
 	body{
@@ -756,6 +757,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-right: 0vw;
 	}
 
+
+	.tab {
+		width: 80vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
 	#app, #appMobile {
 		display: none;
 	}
@@ -774,15 +782,61 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		height: calc(var(--glyph) * 1.15 * var(--escala));
 	}
 
-	
+	.assoc div.glyph{
+		width: calc(var(--glyph) * 0.95 * var(--escala2));
+    	height: calc(var(--glyph) * 1.15 * var(--escala2));
+	}
+
+
+	main{
+		font-size: 1.75vh;
+	}
+
+
+	#aboutTitle, #programmTitle {
+        display: flex;
+        justify-content: center;
+    }
+
 
 	/* for a test*/
 	/* .aba{
 		padding-left: 3vw;
 	} */
 
-	#app{
-		display: none;
+	.dateContentor {
+		justify-content: space-between;
+	}
+
+	.dateBox > div {
+		font-size: 4.5vh;
+	}
+
+	.programmContentor {
+		padding-top: 5vh;
+	}
+
+	.oradorContentor {
+		width: auto;
+		display: grid;
+		grid-template-rows: 49vw auto;
+		grid-template-columns: 1fr;
+
+		row-gap: 20vw;
+
+		padding-bottom: 6vw;
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+
+	.oradorContentor>div:nth-child(2){
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.oradorName {
+		font-size: 5vw;
 	}
 
 	.assoc{
