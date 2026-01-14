@@ -28,6 +28,7 @@ document.getElementById('AbaB1').addEventListener('click', () => {
     abaButtons(1);
     abaActual = 1;
     document.body.classList.remove('not-home');
+    document.body.style.overflowY = 'hidden';
 })
 
 document.getElementById('AbaB2').addEventListener('click', () => {
@@ -41,6 +42,7 @@ document.getElementById('AbaB2').addEventListener('click', () => {
         document.body.classList.add('not-home');
     }, footTemp);
     abaActual = 2;
+    document.body.style.overflowY = '';
 })
 
 document.getElementById('AbaB3').addEventListener('click', () => {
@@ -51,6 +53,7 @@ document.getElementById('AbaB3').addEventListener('click', () => {
         document.body.classList.add('not-home');
     }, footTemp);
     abaActual = 3;
+    document.body.style.overflowY = '';
 })
 
 document.getElementById('AbaB4').addEventListener('click', () => {
@@ -61,6 +64,7 @@ document.getElementById('AbaB4').addEventListener('click', () => {
         document.body.classList.add('not-home');
     }, footTemp);
     abaActual = 4;
+    document.body.style.overflowY = '';
 })
 
 function abaButtons(id){
@@ -88,7 +92,11 @@ function trocaAba(id){
 
             setTimeout(() => {
                 choice.forEach(abaSelected => {
-                    abaSelected.style.display = 'flex';
+                    if (id === 1 && (abaSelected.id === 'app' || abaSelected.id === 'appMobile' || abaSelected.id === 'appTablet')) {
+                        abaSelected.style.display = '';
+                    } else {
+                        abaSelected.style.display = 'flex';
+                    }
                     abaSelected.style.opacity = '0';
                     
                     if (abaSelected.id && abaSelected.id.endsWith('Title')) {

@@ -25,6 +25,7 @@
 
 	const app = document.getElementById('app');
 	const appMobile = document.getElementById('appMobile');
+	const appTablet = document.getElementById('appTablet');
 
 	const titleLine1 = app.querySelector('#titleLine1');
 	const titleLine2 = app.querySelector('#titleLine2');
@@ -33,6 +34,10 @@
 
 	const mobileLine1 = appMobile.querySelector('#titleLine1');
 	const mobileLine2 = appMobile.querySelector('#titleLine2');
+
+	const tabletLine1 = appTablet.querySelector('#titleLine1');
+	const tabletLine2 = appTablet.querySelector('#titleLine2');
+	const tabletLine3 = appTablet.querySelector('#titleLine3');
 
 	const cleanups = [];
 
@@ -145,16 +150,70 @@
 		return firstGlyph;
 	}
 
-	// Build desktop version
 	const initials = [];
 	initials.push(buildLine(titleLine1, 'CICLO DE', 'C'));
 	initials.push(buildLine(titleLine2, 'CONVERSAS', 'C'));
 	initials.push(buildLine(titleLine3, 'DESIGN +', 'D'));
 	initials.push(buildLine(titleLine4, 'MULTIMEDIA', 'M'));
 
-	// Build mobile version with CCDM
 	buildLine(mobileLine1, 'CC', null);
 	buildLine(mobileLine2, 'DM', null);
+
+	function startStaticGlyphAnimation(container) {
+		const glyphs = container.querySelectorAll('.glyph');
+		
+		glyphs.forEach((glyph) => {
+			const mapImg = glyph.querySelector('.layer-map');
+			const letterImg = glyph.querySelector('.layer-letter');
+			if (!mapImg || !letterImg) return;
+
+			const char = glyph.dataset.char;
+			if (!char || !frameCounts[char]) return;
+
+			const frames = frameCounts[char];
+			let current = Math.floor(Math.random() * frames);
+			let intervalId = null;
+			const randomInterval = 5000 + Math.random() * 20000;
+
+			function applyFrame(idx) {
+				current = idx;
+				mapImg.src = assetPath(char, idx, 'F');
+				letterImg.src = assetPath(char, idx, 'C');
+			}
+
+			function tick() {
+				if (frames <= 1) return;
+				let next = Math.floor(Math.random() * frames);
+				if (frames > 1 && next === current) next = (next + 1) % frames;
+				applyFrame(next);
+			}
+
+			function start() {
+				if (intervalId != null) return;
+				intervalId = window.setInterval(tick, randomInterval);
+			}
+
+			function stop() {
+				if (intervalId == null) return;
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+
+			applyFrame(current);
+			start();
+
+			glyph.addEventListener('mouseenter', stop);
+			glyph.addEventListener('mouseleave', start);
+			
+			cleanups.push(() => {
+				stop();
+				glyph.removeEventListener('mouseenter', stop);
+				glyph.removeEventListener('mouseleave', start);
+			});
+		});
+	}
+
+	startStaticGlyphAnimation(appTablet);
 
 	const initialGlyphs = initials.filter(Boolean);
 

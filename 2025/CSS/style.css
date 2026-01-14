@@ -214,6 +214,10 @@ footer{
 	display: none;
 }
 
+#appTablet{
+	display: none;
+}
+
 body.is-ready .headerNav {
 	opacity: 1;
 }
@@ -513,6 +517,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 }
 
 
+@media (min-width: 521px) and (max-width: 1024px) {
+	
+}
+
 @media (max-width: 520px) {
 	:root {
 		--glyph: 12.5vw;
@@ -530,7 +538,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		'Footer';
 		column-gap: 0vw;
 		grid-template-columns: 1fr;
-		grid-template-rows: 25vh 1fr 15vh;
+		grid-template-rows: 20vh 1fr 15vh;
 
 		min-height: 100vh;
 		
@@ -545,7 +553,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		display: none;
 	}
 
-
+	.assoc{
+		padding-top: 10vw;
+	}
 	.footerLogos{
 		padding-left: 0vh;
         padding-top: 0vh;
@@ -601,8 +611,6 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	.headerNav {
-        height: 20vh;
-        
 		align-content: end;
 		padding-left: 11.75vw;
 	}
@@ -612,6 +620,8 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		justify-content: center;
 		align-items: start;
 		gap: 1.5vw;
+
+		line-height: 1.95vh;
 	}
 
 	.dateContentor {
@@ -662,10 +672,25 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
     	font-size: 7vw;
 	}
 
-	.aboutContentor {
+	.aboutContentor, .beforeContentor {
 		width: auto;
 		padding: 10vw;
 	}
+
+
+	 
+
+
+	.beforeBox {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 50vw auto;
+		
+		column-gap: 0vh;
+		row-gap: 10vh;
+		
+		padding-bottom: 15vh;		
+	}	
 
 	/* 
 	.mobile{
@@ -685,4 +710,91 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		overflow: hidden;
 	} 
 	*/
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	:root {
+		--glyph: 12.5vw;
+		--escala: 1.95;
+	}
+
+	body{
+		width: 100vw;
+		overflow-x: hidden;
+
+		grid-template-areas:
+        'Header '
+        'Main'
+		'Footer';
+		column-gap: 0vw;
+		grid-template-columns: 1fr;
+		grid-template-rows: 20vh 1fr 15vh;
+
+		min-height: 100vh;
+		
+	}
+
+	.headerNav{
+		padding-left: 16vw;
+		padding-top: 4vh;
+	}
+
+	.headerNav nav {
+		align-items: start;
+	}
+
+	header, main {
+		padding: 0vh;
+		padding-top: 0vh;
+		/* padding-left: 1.5vw; */
+		padding-bottom: 0vh;
+		padding-right: 0vw;
+	}
+
+	#app, #appMobile {
+		display: none;
+	}
+
+	#appTablet {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2vh;
+        width: 100vw;
+	}
+
+	#appTablet div.glyph {
+		width: calc(var(--glyph) * 0.95 * var(--escala));
+		height: calc(var(--glyph) * 1.15 * var(--escala));
+	}
+
+	
+
+	/* for a test*/
+	/* .aba{
+		padding-left: 3vw;
+	} */
+
+	#app{
+		display: none;
+	}
+
+	.assoc{
+		padding-top: 10vw;
+	}
+	.footerLogos{
+		padding-left: 0vh;
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+		
+		justify-content: center;
+        align-items: center;
+	}
+
+	.footerLogos img {
+		width: 65vw;
+		height: auto;
+	}
+
 }
