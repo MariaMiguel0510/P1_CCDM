@@ -715,7 +715,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 @media (min-width: 768px) and (max-width: 1024px) {
 	:root {
 		--glyph: 12.5vw;
-		--escala: 1.95;
+		--escala: 1.9;
 	}
 
 	body{
@@ -728,7 +728,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		'Footer';
 		column-gap: 0vw;
 		grid-template-columns: 1fr;
-		grid-template-rows: 20vh 1fr 15vh;
+		grid-template-rows: 17.5vh 1fr 20vh;
 
 		min-height: 100vh;
 		
@@ -742,6 +742,11 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	.headerNav nav {
 		align-items: start;
 	}
+
+	.headerNav a {
+		font-size: 1.5vh;
+	}
+
 
 	header, main {
 		padding: 0vh;
