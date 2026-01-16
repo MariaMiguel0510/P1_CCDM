@@ -72,7 +72,7 @@
 				glyph.appendChild(mapImg);
 				glyph.appendChild(letterImg);
 
-				const frames = frameCounts[char] ?? 1;
+				const frames = frameCounts[char] != null ? frameCounts[char] : 1;
 				let current = Math.floor(Math.random() * frames);
 				let intervalId = null;
 				
