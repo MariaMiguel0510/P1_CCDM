@@ -19,96 +19,30 @@ var AbaB = document.querySelectorAll('.AbaB');
 var Aba = document.querySelectorAll('.aba');
 var programmAll = document.querySelectorAll('.programmContentor');
 
-var headerSocial = document.querySelector('.headerSocial');
-var footerSocial = document.querySelector('.footerSocial');
 var footerLogos = document.querySelector('.footerLogos');
 var vazio = document.getElementById('vazio');
-var headerNav = document.querySelector('.headerNav');
 
 var abaActual = 1;
 var footerTimeout = null;
 var backgroundTimeout = null;
 
-function isDesktop() {
-    return window.innerWidth >= 1025;
-}
-
-function clearInlineSocialStyles() {
-    if (!headerSocial || !footerSocial || !footerLogos || !vazio) return;
-    headerSocial.style.display = 'none';
-    footerSocial.style.display = 'none';
-    headerSocial.style.removeProperty('opacity');
-    headerSocial.style.removeProperty('pointer-events');
-    footerSocial.style.removeProperty('opacity');
-    footerSocial.style.removeProperty('pointer-events');
-    footerLogos.style.removeProperty('background');
-    vazio.style.removeProperty('background');
-    if (headerNav) {
-        headerNav.style.removeProperty('opacity');
-    }
-    clearTimeout(backgroundTimeout);
-}
-
-function goToHome() {
-    if (!headerSocial || !footerSocial || !footerLogos || !vazio) return;
-    if (!isDesktop()) {
-        clearInlineSocialStyles();
-        return;
-    }
-    if (headerNav) {
-        headerNav.style.opacity = '1';
-    }
-    headerSocial.style.display = 'flex';
-    footerSocial.style.display = 'flex';
-    footerLogos.style.opacity = '1';
-    
-    headerSocial.style.opacity = '1';
-    headerSocial.style.pointerEvents = 'auto';
-    
-    footerSocial.style.opacity = '0';
-    footerSocial.style.pointerEvents = 'none';
-    
-    clearTimeout(backgroundTimeout);
-    footerLogos.style.transition = 'opacity 650ms ease, background 650ms ease';
-    footerLogos.style.background = 'transparent';
-    vazio.style.transition = 'background 650ms ease';
-    vazio.style.background = 'transparent';
-}
-
-
-function leaveHome() {
-    if (!headerSocial || !footerSocial || !footerLogos || !vazio) return;
-    if (!isDesktop()) {
-        clearInlineSocialStyles();
-        return;
-    }
-    if (headerNav) {
-        headerNav.style.opacity = '1';
-    }
-    headerSocial.style.display = 'flex';
-    footerSocial.style.display = 'flex';
-    footerLogos.style.opacity = '1';
-    
-    headerSocial.style.opacity = '0';
-    headerSocial.style.pointerEvents = 'none';
-    
-    footerSocial.style.opacity = '1';
-    footerSocial.style.pointerEvents = 'auto';
-    
-    clearTimeout(backgroundTimeout);
-    backgroundTimeout = setTimeout(function () {
-        footerLogos.style.background = '#00E2FD';
-        vazio.style.background = '#00E2FD';
-    }, 800);
-}
-
 document.getElementById('AbaB1').addEventListener('click', function () {
     clearTimeout(footerTimeout);
+    clearTimeout(backgroundTimeout);
     trocaAba(1);
     abaButtons(1);
     abaActual = 1;
-    goToHome();
     document.body.style.overflowY = 'hidden';
+    
+    // Volta cor do footer e vazio para transparente imediatamente (sobrescreve delay)
+    if (footerLogos) {
+        footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease';
+        footerLogos.style.backgroundColor = '';
+    }
+    if (vazio) {
+        vazio.style.transition = 'background-color 650ms ease';
+        vazio.style.backgroundColor = '';
+    }
 });
 
 document.getElementById('AbaB2').addEventListener('click', function () {
@@ -118,42 +52,58 @@ document.getElementById('AbaB2').addEventListener('click', function () {
         abaButtons(2);
         trocaProgramm(15);
     }
-    leaveHome();
     abaActual = 2;
     document.body.style.overflowY = '';
+    
+    // Restaura transição com delay e aplica cor
+    clearTimeout(backgroundTimeout);
+    if (footerLogos) {
+        footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
+        footerLogos.style.backgroundColor = '#00E2FD';
+    }
+    if (vazio) {
+        vazio.style.transition = 'background-color 650ms ease 800ms';
+        vazio.style.backgroundColor = '#00E2FD';
+    }
 });
 
 document.getElementById('AbaB3').addEventListener('click', function () {
     clearTimeout(footerTimeout);
     trocaAba(3);
     abaButtons(3);
-    leaveHome();
     abaActual = 3;
     document.body.style.overflowY = '';
+    
+    // Restaura transição com delay e aplica cor
+    clearTimeout(backgroundTimeout);
+    if (footerLogos) {
+        footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
+        footerLogos.style.backgroundColor = '#00E2FD';
+    }
+    if (vazio) {
+        vazio.style.transition = 'background-color 650ms ease 800ms';
+        vazio.style.backgroundColor = '#00E2FD';
+    }
 });
 
 document.getElementById('AbaB4').addEventListener('click', function () {
     clearTimeout(footerTimeout);
     trocaAba(4);
     abaButtons(4);
-    leaveHome();
     abaActual = 4;
     document.body.style.overflowY = '';
-});
-
-window.addEventListener('resize', function () {
-    if (abaActual === 1) {
-        goToHome();
-    } else {
-        leaveHome();
+    
+    // Restaura transição com delay e aplica cor
+    clearTimeout(backgroundTimeout);
+    if (footerLogos) {
+        footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
+        footerLogos.style.backgroundColor = '#00E2FD';
+    }
+    if (vazio) {
+        vazio.style.transition = 'background-color 650ms ease 800ms';
+        vazio.style.backgroundColor = '#00E2FD';
     }
 });
-
-if (abaActual === 1) {
-    goToHome();
-} else {
-    leaveHome();
-}
 
 function abaButtons(id){
     if (abaActual != id){
