@@ -34,7 +34,6 @@ document.getElementById('AbaB1').addEventListener('click', function () {
     abaActual = 1;
     document.body.style.overflowY = 'hidden';
     
-    // Volta cor do footer e vazio para transparente imediatamente (sobrescreve delay)
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease';
         footerLogos.style.backgroundColor = '';
@@ -55,7 +54,6 @@ document.getElementById('AbaB2').addEventListener('click', function () {
     abaActual = 2;
     document.body.style.overflowY = '';
     
-    // Restaura transição com delay e aplica cor
     clearTimeout(backgroundTimeout);
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
@@ -93,7 +91,6 @@ document.getElementById('AbaB4').addEventListener('click', function () {
     abaActual = 4;
     document.body.style.overflowY = '';
     
-    // Restaura transição com delay e aplica cor
     clearTimeout(backgroundTimeout);
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
