@@ -125,6 +125,8 @@ header, main, footer img{
 
 header{
 	padding-right: 0vw;
+	position: fixed;
+	width: 10.2vw;
 }
 
 .headerNav {
@@ -222,7 +224,7 @@ footer{
 }
 
 .footerSocial {
-	display: none;
+	display: block;
 	gap: 1vh;
 }
 
@@ -345,6 +347,15 @@ body.is-rest-visible .glyph--rest .layer-letter {
 }
 
 body.is-ready .glyph:hover .layer-letter {
+	opacity: 0;
+}
+
+.beforeContentor .dateBox.word .glyph .layer-letter {
+	opacity: 1;
+	transition: opacity 650ms ease;
+}
+
+body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	opacity: 0;
 }
 
@@ -567,6 +578,21 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	padding-bottom: 0.75vh;
 }
 
+.beforeContentor .word{
+	gap: 0.5vw;
+}
+
+.beforeContentor div.glyph{
+	width: calc(var(--glyph) * 0.95 * 0.6);
+    height: calc(var(--glyph) * 1.15 * 0.6);
+    padding-bottom: 5vw;
+}
+
+
+
+
+
+
 
 @media (min-aspect-ratio: 1.95/1) and (max-aspect-ratio: 2.3/1) {
 	:root {
@@ -587,7 +613,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	
 }
 
-@media (max-width: 520px) {
+@media (max-width: 521px){
 	:root {
 		--glyph: 12.5vw;
 		--padd: 4vw;
@@ -617,6 +643,11 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	#app{
 		display: none;
+	}
+
+	header{
+		position: relative;
+		width: auto;
 	}
 
 	.assoc{
@@ -832,6 +863,20 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	.footerSocial{
 		display: none;
 	}
+
+
+	.beforeContentor .word{
+		gap: 0.5vw;
+	}
+
+	.beforeContentor div.glyph{
+		width: calc(var(--glyph) * 0.95 * 1);
+        height: calc(var(--glyph) * 1.15 * 1);
+        padding-bottom: 5vw;
+	}
+
+
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -896,6 +941,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-right: 0vw;
 	}
 
+	header{
+		position: relative;
+		width: auto;;
+	}
 
 	.tab {
 		width: 80vw;
@@ -1022,6 +1071,16 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		display: none;
 	}
 
+
+	.beforeContentor .word{
+		gap: 0vw;
+	}
+
+	.beforeContentor div.glyph{
+		width: calc(var(--glyph) * 0.95 * 0.8);
+        height: calc(var(--glyph) * 1.15 * 0.8);
+        padding-bottom: 5vw;
+	}
 }
 
 

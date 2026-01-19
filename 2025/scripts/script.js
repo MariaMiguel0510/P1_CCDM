@@ -23,6 +23,13 @@
 				'_': 3,
 			};
 
+	const numberFrameCounts = {
+				'0': 2,
+				'1': 1,
+				'2': 2,
+				'3': 2,
+			};
+
 	const app = document.getElementById('app');
 	const appMobile = document.getElementById('appMobile');
 	const appTablet = document.getElementById('appTablet');
@@ -373,6 +380,85 @@
 	}
 
 	const secondaryTitleIds = ['programmTitle', 'aboutTitle', 'beforeTitle'];
+
+
+	let numberAnimationCleanups = [];
+
+	function numberAssetPath(digit, frameIndex, suffix) {
+		return `Data/Numbers/${encodeURIComponent(digit)}_${frameIndex}_${suffix}.png`;
+	}
+
+	function startNumberAnimation() {
+		numberAnimationCleanups.forEach(cleanup => cleanup());
+		numberAnimationCleanups = [];
+
+		const beforeContentor = document.querySelector('.beforeContentor');
+		if (!beforeContentor) return;
+
+		const glyphs = beforeContentor.querySelectorAll('.dateBox.word .glyph');
+
+		glyphs.forEach((glyph) => {
+			const mapImg = glyph.querySelector('.layer-map');
+			const letterImg = glyph.querySelector('.layer-letter');
+			if (!mapImg || !letterImg) return;
+
+			// Extrair o dígito do src (ex: "Data/Numbers/2_0_F.png" -> "2")
+			const match = mapImg.src.match(/Numbers\/(\d)_\d+_[FC]\.png$/);
+			if (!match) return;
+
+			const digit = match[1];
+			if (!numberFrameCounts[digit]) return;
+
+			glyph.dataset.char = digit;
+
+			const frames = numberFrameCounts[digit];
+			let current = Math.floor(Math.random() * frames);
+			let intervalId = null;
+			const randomInterval = 3000 + Math.random() * 10000;
+
+			function applyFrame(idx) {
+				current = idx;
+				mapImg.src = numberAssetPath(digit, idx, 'F');
+				letterImg.src = numberAssetPath(digit, idx, 'C');
+			}
+
+			function tick() {
+				if (frames <= 1) return;
+				let next = Math.floor(Math.random() * frames);
+				if (frames > 1 && next === current) next = (next + 1) % frames;
+				applyFrame(next);
+			}
+
+			function start() {
+				if (intervalId != null) return;
+				intervalId = window.setInterval(tick, randomInterval);
+			}
+
+			function stop() {
+				if (intervalId == null) return;
+				window.clearInterval(intervalId);
+				intervalId = null;
+			}
+
+			applyFrame(current);
+
+			const startTimeout = window.setTimeout(() => {
+				start();
+			}, 2000);
+
+			glyph.addEventListener('mouseenter', stop);
+			glyph.addEventListener('mouseleave', start);
+
+			const cleanup = () => {
+				window.clearTimeout(startTimeout);
+				stop();
+				glyph.removeEventListener('mouseenter', stop);
+				glyph.removeEventListener('mouseleave', start);
+			};
+
+			numberAnimationCleanups.push(cleanup);
+		});
+	}
 	
 	const observer = new MutationObserver((mutations) => {
 		mutations.forEach((mutation) => {
@@ -382,6 +468,10 @@
 				
 				if (display !== 'none' && secondaryTitleIds.includes(target.id)) {
 					startSecondaryTitleAnimation(target);
+				}
+				
+				if (display !== 'none' && target.classList.contains('beforeContentor')) {
+					startNumberAnimation();
 				}
 			}
 		});
@@ -393,4 +483,9 @@
 			observer.observe(element, { attributes: true, attributeFilter: ['style'] });
 		}
 	});
+
+	const beforeContentor = document.querySelector('.beforeContentor');
+	if (beforeContentor) {
+		observer.observe(beforeContentor, { attributes: true, attributeFilter: ['style'] });
+	}
 })();
