@@ -776,7 +776,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	.aboutTitles {
-    	font-size: 7vw;
+    	font-size: 6vw;
 	}
 
 	.aboutContentor, .beforeContentor {
@@ -939,6 +939,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		/* padding-left: 1.5vw; */
 		padding-bottom: 0vh;
 		padding-right: 0vw;
+	}
+
+	.aboutTitles {
+		font-size: 3.25vh;
 	}
 
 	header{
