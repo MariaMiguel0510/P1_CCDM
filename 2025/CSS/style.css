@@ -80,7 +80,7 @@
 	--bg: rgb(255, 255, 255);
 	--fg: rgb(0, 0, 0);
 	--accent: rgb(0, 222, 255);
-	--glyph: 8.0375vw;
+	--glyph: 8.5vw;
 	--gap: 0.15vw;
 	--lineGap: clamp(14px, 1.8vw, 26px);
 	--temp: 0.4s;
@@ -103,16 +103,16 @@ body {
 	
 	grid-template-areas: 
 	'Header Main'
-	'Not Footer'
+	'Not Not'
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 12.5vw auto;
+	grid-template-columns: 10.25vw auto;
 }
 
 header,main {
-    padding: 5vh;
-    padding-top: 8vh;
+    padding: 3vh;
+    padding-top: 9.5vh;
 	/* padding-left: 1.5vw; */
 	padding-bottom: 0vh;
 	padding-right: 0vw;
@@ -138,6 +138,8 @@ header{
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: end;
+
+	height: 77.5vh;
 }
 
 main{
@@ -202,12 +204,11 @@ footer{
 }
 
 .headerSocial {
-	display: none;
 	gap: 1vh;
 }
 
 .footerLogos {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	opacity: 0;
@@ -524,6 +525,10 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	padding-bottom: 10vh;
 }
 
+.abBox img{
+	width: 40vw;
+}
+
 
 #programmTitle .layer-letter,
 #aboutTitle .layer-letter,
@@ -654,6 +659,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-top: 10vw;
 	}
 	.footerLogos{
+		display: flex;
 		padding-left: 0vh;
         padding-top: 0vh;
         padding-bottom: 0vh;
@@ -729,6 +735,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.headerSocial {
 		display: flex;
+		align-items: end;
 	}
 
 	.dateContentor {
@@ -931,6 +938,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.headerSocial {
 		display: flex;
+		align-items: end;
 	}
 
 	header, main {
@@ -1057,6 +1065,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	.footerLogos{
+		display: flex;
 		padding-left: 0vh;
         padding-top: 0vh;
         padding-bottom: 0vh;
