@@ -505,7 +505,7 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 }
 
 .textAboutContentor{
-	padding-bottom: 7.5vh;
+	padding-bottom: 15vh;
 }
 
 .orgBox{
@@ -522,7 +522,7 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 .abBox{
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 10vh;
+	padding-bottom: 8.5vh;
 }
 
 .abBox img{
@@ -788,11 +788,12 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	
 	#aboutTitle, #programmTitle {
 		display: flex;
-		justify-content: center;
+        width: 88.25vw;
+        padding-left: 11.75vw;
 	}
 
 	#aboutTitle{
-		padding-bottom: 5vh;
+		padding-bottom: 3vh;
 	}
 
 	.aboutTitles {
@@ -804,7 +805,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding: 10vw;
 	}
 
-
+	.textAboutContentor {
+    	padding-bottom: 7.5vh;
+	}
 	.oradorName {
 		font-size: 7.5vw;
 	}
@@ -824,9 +827,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		grid-template-rows: 50vw auto;
 		
 		column-gap: 0vh;
-		row-gap: 10vh;
+		row-gap: 3.5vh;
 		
-		padding-bottom: 10vh;		
+		padding-bottom: 15vh;		
 	}	
 
 	.editionContent > span{
@@ -1021,9 +1024,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	#aboutTitle, #programmTitle {
         display: flex;
-        justify-content: center;
+        width: 88.25vw;
+        padding-left: 10vw;
     }
 
+	.textAboutContentor {
+    	padding-bottom: 10vh;
+	}
 
 	/* for a test*/
 	/* .aba{
@@ -1072,10 +1079,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	.beforeBox {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 50vw auto;
+        grid-template-rows: 37.5vw auto;
         column-gap: 0vh;
         row-gap: 0vh;
-        padding-bottom: 15vh;
+        padding-bottom: 12.5vh;
     }
 
 	#beforeTitle {
