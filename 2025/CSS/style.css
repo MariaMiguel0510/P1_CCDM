@@ -605,7 +605,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 	
 	body{
-		grid-template-columns: 12vw auto;
+		grid-template-columns: 12.5vw auto;
 	}
 
 	main{
@@ -614,7 +614,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	header, main {
 		padding: 7.5vh;
-		padding-top: 8vh;
+		padding-top: 10.25vh;
 		/* padding-left: 1.5vw; */
 		padding-bottom: 0vh;
 		padding-right: 0vw;
@@ -630,7 +630,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	#iconsAbout{
 		display: none;
 	}
-	
+
 	:root {
 		--glyph: 12.5vw;
 		--padd: 4vw;
