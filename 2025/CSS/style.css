@@ -601,15 +601,23 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 @media (min-aspect-ratio: 1.95/1) and (max-aspect-ratio: 2.3/1) {
 	:root {
-		--glyph: 7vw;
+		--glyph: 7.95vw;
 	}
 	
 	body{
-		grid-template-columns: 17.95vw auto;
+		grid-template-columns: 12vw auto;
 	}
 
 	main{
 		width: 68.75vw;
+	}
+
+	header, main {
+		padding: 7.5vh;
+		padding-top: 8vh;
+		/* padding-left: 1.5vw; */
+		padding-bottom: 0vh;
+		padding-right: 0vw;
 	}
 }
 
@@ -619,6 +627,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 }
 
 @media (max-width: 521px){
+	#iconsAbout{
+		display: none;
+	}
+	
 	:root {
 		--glyph: 12.5vw;
 		--padd: 4vw;
@@ -718,6 +730,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		flex-direction: row;
 		padding-left: 11.75vw;
 		padding-right: 11.75vw;
+		height: auto;
 	}
 
 	.headerNav nav{
@@ -887,6 +900,10 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+	#iconsAbout{
+		display: none;
+	}
+
 	:root {
 		--glyph: 12.5vw;
 		--escala: 1.9;
@@ -925,6 +942,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		padding-right: 16vw;
 		padding-top: 4vh;
 		padding-bottom: 2vh;
+		height: auto;
 		
 	}
 
