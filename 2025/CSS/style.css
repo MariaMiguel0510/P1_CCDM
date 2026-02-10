@@ -803,6 +803,8 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	.aboutContentor, .beforeContentor {
 		width: auto;
 		padding: 10vw;
+		padding-left: 12vw;
+		padding-right: 12vw;
 	}
 
 	.textAboutContentor {
@@ -897,8 +899,6 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
         height: calc(var(--glyph) * 1.15 * 1);
         padding-bottom: 5vw;
 	}
-
-
 
 }
 
