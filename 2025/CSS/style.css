@@ -107,12 +107,12 @@ body {
 	;
 
 	column-gap: 0vw;
-	grid-template-columns: 10.25vw auto;
+	grid-template-columns: 11vw auto;
 }
 
 header,main {
     padding: 3vh;
-    padding-top: 9.5vh;
+    padding-top: 10.5vh;
 	/* padding-left: 1.5vw; */
 	padding-bottom: 0vh;
 	padding-right: 0vw;
