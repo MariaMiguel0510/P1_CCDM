@@ -670,8 +670,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	.assoc{
 		padding-top: 10vw;
 	}
+
+	footer{
+		display: none;
+	}
+
 	.footerLogos{
-		display: flex;
+		display: none;
 		padding-left: 0vh;
         padding-top: 0vh;
         padding-bottom: 0vh;
@@ -1090,7 +1095,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	.footerLogos{
-		display: flex;
+		display: none;
 		padding-left: 0vh;
         padding-top: 0vh;
         padding-bottom: 0vh;

@@ -57,11 +57,11 @@ document.getElementById('AbaB2').addEventListener('click', function () {
     clearTimeout(backgroundTimeout);
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
-        footerLogos.style.backgroundColor = '#00E2FD';
+        //footerLogos.style.backgroundColor = '#00E2FD';
     }
     if (vazio) {
         vazio.style.transition = 'background-color 650ms ease 800ms';
-        vazio.style.backgroundColor = '#00E2FD';
+        //vazio.style.backgroundColor = '#00E2FD';
     }
 });
 
@@ -72,15 +72,14 @@ document.getElementById('AbaB3').addEventListener('click', function () {
     abaActual = 3;
     document.body.style.overflowY = '';
     
-    // Restaura transição com delay e aplica cor
     clearTimeout(backgroundTimeout);
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
-        footerLogos.style.backgroundColor = '#00E2FD';
+        //footerLogos.style.backgroundColor = '#00E2FD';
     }
     if (vazio) {
         vazio.style.transition = 'background-color 650ms ease 800ms';
-        vazio.style.backgroundColor = '#00E2FD';
+        //vazio.style.backgroundColor = '#00E2FD';
     }
 });
 
@@ -94,11 +93,11 @@ document.getElementById('AbaB4').addEventListener('click', function () {
     clearTimeout(backgroundTimeout);
     if (footerLogos) {
         footerLogos.style.transition = 'opacity 650ms ease, background-color 650ms ease 800ms';
-        footerLogos.style.backgroundColor = '#00E2FD';
+        //footerLogos.style.backgroundColor = '#00E2FD';
     }
     if (vazio) {
         vazio.style.transition = 'background-color 650ms ease 800ms';
-        vazio.style.backgroundColor = '#00E2FD';
+        //vazio.style.backgroundColor = '#00E2FD';
     }
 });
 
