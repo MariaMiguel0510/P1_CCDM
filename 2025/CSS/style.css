@@ -525,11 +525,21 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	padding-bottom: 8.5vh;
 }
 
-.abBox img{
+.abBox img:nth-child(1){
 	width: 40vw;
+	height: max-content;
 }
 
+.abBox img:nth-child(2){
+	width: 15vw;
+}
 
+#iconsAbout{
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	gap: 5vw;
+}
 #programmTitle .layer-letter,
 #aboutTitle .layer-letter,
 #beforeTitle .layer-letter {
@@ -593,7 +603,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
     padding-bottom: 5vw;
 }
 
+.mainDate{
+	padding-top: 2.5vh;
+    display: flex;
+    justify-content: end;
 
+	font-weight: 400;
+}
 
 
 
@@ -647,7 +663,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		'Footer';
 		column-gap: 0vw;
 		grid-template-columns: 1fr;
-		grid-template-rows: 20vh 1fr 15vh;
+		grid-template-rows: 15vh 1fr 15vh;
 
 		min-height: 100vh;
 		
