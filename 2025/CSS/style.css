@@ -628,12 +628,13 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	main{
-		width: 68.75vw;
+		/* width: 68.75vw; */
+		width: 75vw;
 	}
 
 	header, main {
 		padding: 7.5vh;
-		padding-top: 10.25vh;
+		padding-top: 8vh;
 		/* padding-left: 1.5vw; */
 		padding-bottom: 0vh;
 		padding-right: 0vw;
