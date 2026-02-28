@@ -50,6 +50,13 @@ document.getElementById('AbaB2').addEventListener('click', function () {
         trocaAba(2);
         abaButtons(2);
         trocaProgramm(15);
+        
+        setTimeout(function() {
+            var dateContentor = document.querySelector('.dateContentor');
+            if (dateContentor && window.startNumberAnimation) {
+                window.startNumberAnimation(dateContentor);
+            }
+        }, temp + 50);
     }
     abaActual = 2;
     document.body.style.overflowY = '';
@@ -158,19 +165,30 @@ function trocaAba(id){
 
 document.getElementById('buttom15').addEventListener('click', function () {
     trocaProgramm(15);
+    setActiveDate(this);
 });
 
 document.getElementById('buttom16').addEventListener('click', function () {
     trocaProgramm(16);
+    setActiveDate(this);
 });
 
 document.getElementById('buttom17').addEventListener('click', function () {
     trocaProgramm(17);
+    setActiveDate(this);
 });
 
 document.getElementById('buttom18').addEventListener('click', function () {
     trocaProgramm(18);
+    setActiveDate(this);
 });
+
+function setActiveDate(element) {
+    document.querySelectorAll('.dateContentor .dateBox').forEach(function(box) {
+        box.classList.remove('active');
+    });
+    element.classList.add('active');
+}
 
 
 function trocaProgramm(id){

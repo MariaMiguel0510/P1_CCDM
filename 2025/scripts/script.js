@@ -25,9 +25,12 @@
 
 	const numberFrameCounts = {
 				'0': 2,
-				'1': 1,
+				'1': 3,
 				'2': 2,
 				'3': 2,
+				'4': 2,
+				'5': 2,
+				'8': 2,
 			};
 
 	const app = document.getElementById('app');
@@ -49,7 +52,8 @@
 	const cleanups = [];
 
 	function assetPath(prefix, frameIndex, suffix) {
-				return `Data/${encodeURIComponent(prefix)}_${frameIndex}_${suffix}.png`;
+				const filePrefix = prefix === '+' ? 'mais' : prefix;
+				return `Data/${encodeURIComponent(filePrefix)}_${frameIndex}_${suffix}.png`;
 	}
 
 	function createSpacer() {
@@ -297,8 +301,9 @@
 	});
 
 	function getCharFromImageSrc(imgSrc) {
-		const match = imgSrc.match(/\/([A-Z+_])_\d+_[CF]\.png$/);
-		return match ? match[1] : null;
+		const match = imgSrc.match(/\/([A-Z_]|mais)_\d+_[CF]\.png$/);
+		if (!match) return null;
+		return match[1] === 'mais' ? '+' : match[1];
 	}
 
 	const activeAnimations = {};
@@ -388,14 +393,13 @@
 		return `Data/Numbers/${encodeURIComponent(digit)}_${frameIndex}_${suffix}.png`;
 	}
 
-	function startNumberAnimation() {
+	function startNumberAnimation(container) {
 		numberAnimationCleanups.forEach(cleanup => cleanup());
 		numberAnimationCleanups = [];
 
-		const beforeContentor = document.querySelector('.beforeContentor');
-		if (!beforeContentor) return;
+		if (!container) return;
 
-		const glyphs = beforeContentor.querySelectorAll('.dateBox.word .glyph');
+		const glyphs = container.querySelectorAll('.dateBox .glyph');
 
 		glyphs.forEach((glyph) => {
 			const mapImg = glyph.querySelector('.layer-map');
@@ -470,8 +474,8 @@
 					startSecondaryTitleAnimation(target);
 				}
 				
-				if (display !== 'none' && target.classList.contains('beforeContentor')) {
-					startNumberAnimation();
+				if (display !== 'none' && (target.classList.contains('beforeContentor') || target.classList.contains('dateContentor'))) {
+					startNumberAnimation(target);
 				}
 			}
 		});
@@ -488,4 +492,11 @@
 	if (beforeContentor) {
 		observer.observe(beforeContentor, { attributes: true, attributeFilter: ['style'] });
 	}
+
+	const dateContentor = document.querySelector('.dateContentor');
+	if (dateContentor) {
+		observer.observe(dateContentor, { attributes: true, attributeFilter: ['style'] });
+	}
+
+	window.startNumberAnimation = startNumberAnimation;
 })();

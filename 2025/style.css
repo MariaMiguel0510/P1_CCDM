@@ -351,12 +351,14 @@ body.is-ready .glyph:hover .layer-letter {
 	opacity: 0;
 }
 
-.beforeContentor .dateBox.word .glyph .layer-letter {
+.beforeContentor .dateBox.word .glyph .layer-letter,
+.dateContentor .dateBox .glyph .layer-letter {
 	opacity: 1;
 	transition: opacity 650ms ease;
 }
 
-body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
+body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter,
+body.is-ready .dateContentor .dateBox .glyph:hover .layer-letter {
 	opacity: 0;
 }
 
@@ -392,7 +394,8 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	font-weight: 700;
 }
 
-.dateContentor .dateBox:hover{
+.dateContentor .dateBox:hover,
+.dateContentor .dateBox.active{
 	cursor: pointer;
 	scale: 1.15;
 }
@@ -402,10 +405,10 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	display: flex;
 	flex-direction: column;
 	width: min(1050px, 100%);
-	padding-top: 12.5vh;
+	padding-top: 11vh;
 
 	gap: 10vh;
-	padding-bottom: 10vh;
+	padding-bottom: 7vh;
 }
 
 .oradorContentor{
@@ -423,7 +426,7 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 }
 
 .oradorInformation > span{
-	padding-bottom: 1.5vh;
+	padding-bottom: 2vh;
 }
 
 .oradorName{
@@ -435,13 +438,31 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	font-size: 1.75vh;	
 }
 
+
+.right{
+	display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+
 .oradorText{
 	margin-right: 2.5vw;
+}
+
+.photo{
+	width: 20vw !important;
+}
+
+.linkbox {
+    line-height: 1vh;
 }
 
 #beforeTitle{
 	padding-bottom: 15vh;
 }
+
 
 .beforeBox{
 	display: grid;
@@ -470,7 +491,16 @@ body.is-ready .beforeContentor .dateBox.word .glyph:hover .layer-letter {
 	font-size: 2.5vh;
 }
 
+.linkP{
+	color: var(--accent);
+	text-decoration: none;
+}
 
+.imagemPen{
+	width: 18vw !important;
+    padding-top: 3vh;
+    padding-bottom: 9vh;
+}
 
 .speakers{
 	display: flex;
@@ -598,9 +628,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	gap: 0.5vw;
 }
 
-.beforeContentor div.glyph{
-	width: calc(var(--glyph) * 0.95 * 0.6);
-    height: calc(var(--glyph) * 1.15 * 0.6);
+.beforeContentor div.glyph, .dateContentor div.glyph{
+	width: calc(var(--glyph) * 0.95 * 0.5);
+    height: calc(var(--glyph) * 1.15 * 0.5);
     padding-bottom: 5vw;
 }
 
@@ -647,6 +677,15 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 }
 
 @media (max-width: 521px){
+	.photo{
+		display: none;
+	}
+
+
+	.imagemPen{
+		width: 50vw !important; 
+		padding-top: 7vh;
+	}
 
 	.mainDate {
 		padding-top: 2vh;
@@ -953,6 +992,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+	.photo{
+		display: none;
+	}
 
 	.mainDate {
 		padding-top: 0vh;
