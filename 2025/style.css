@@ -374,7 +374,7 @@ body.is-ready .dateContentor .dateBox .glyph:hover .layer-letter {
 
 .dateContentor{
 	padding-top: 5vh;
-	height: 10vh;
+	/* height: 10vh; */
 	display: flex;
 	flex-direction: row;
 
@@ -415,6 +415,7 @@ body.is-ready .dateContentor .dateBox .glyph:hover .layer-letter {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 60% auto;
+	gap: 5vw;
 }
 
 .oradorContentor img{
@@ -650,7 +651,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 @media (min-aspect-ratio: 1.95/1) and (max-aspect-ratio: 2.3/1) {
 	:root {
-		--glyph: 7.87vw;
+		--glyph: 7.3vw;
 	}
 	
 	body{
@@ -668,6 +669,20 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		/* padding-left: 1.5vw; */
 		padding-bottom: 0vh;
 		padding-right: 0vw;
+	}
+
+	.oradorInformation > span {
+		padding-bottom: 3.25vh;
+	}
+
+	#iconsBox {
+		padding-bottom: 15vh;
+	}
+
+	.imagemPen {
+		width: 18vw !important;
+		padding-top: 3vh;
+		padding-bottom: 11vh;
 	}
 }
 
