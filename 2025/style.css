@@ -651,7 +651,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 @media (min-aspect-ratio: 1.95/1) and (max-aspect-ratio: 2.3/1) {
 	:root {
-		--glyph: 7.3vw;
+		--glyph: 7.35vw;
 	}
 	
 	body{
@@ -660,7 +660,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	main{
 		/* width: 68.75vw; */
-		width: 75vw;
+		width: 70vw;
 	}
 
 	header, main {
