@@ -453,8 +453,14 @@ body.is-ready .dateContentor .dateBox .glyph:hover .layer-letter {
 }
 
 .photo{
-	width: 20vw !important;
+	width: 22vw !important;
 }
+
+#tiago{
+	width: 25vw !important;
+}
+
+
 
 .linkbox {
     line-height: 1vh;
@@ -647,7 +653,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	padding-bottom: 12vh;
 }
 
-
+.tiago span.oradorText.right:nth-child(3) {
+    height: 100vh;
+}
 
 @media (min-aspect-ratio: 1.95/1) and (max-aspect-ratio: 2.3/1) {
 	:root {
@@ -655,7 +663,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 	
 	body{
-		grid-template-columns: 12.5vw auto;
+		grid-template-columns: 15vw auto;
 	}
 
 	main{
@@ -669,6 +677,9 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		/* padding-left: 1.5vw; */
 		padding-bottom: 0vh;
 		padding-right: 0vw;
+	}
+	header {
+		width: 12vw;
 	}
 
 	.oradorInformation > span {
@@ -730,7 +741,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 	}
 
 	:root {
-		--glyph: 12.5vw;
+		--glyph: 12vw;
 		--padd: 4vw;
 		--escala: 3.25;
 	}
@@ -821,6 +832,8 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 		align-items: center;
 
 		font-size: 3.25vw;
+
+		padding-bottom: 3vh;
 	}
 
 	.spanConversas{
@@ -856,8 +869,7 @@ body.is-ready #beforeTitle .glyph:hover .layer-letter {
 
 	.dateContentor {
 		width: 80vw;
-		overflow-x: scroll;
-
+		overflow: hidden;
 		gap: 2vw;
 		justify-content: space-between;
 	}
